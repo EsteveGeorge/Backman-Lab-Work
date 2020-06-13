@@ -10,3 +10,4 @@ import numpy as np
 import statistics as stats
 import os
 ```
+Imports all necessary programs for function of code
