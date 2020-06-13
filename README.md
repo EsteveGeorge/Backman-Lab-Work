@@ -63,3 +63,35 @@ df_control_twelveh = (df4 + df5 + df6)
 df_drug_zeroh = (df7 + df8 + df9)
 df_drug_twelveh = (df10 + df11 + df12)
 ```
+
+The following step concatenates the previous dataframes with their respective RMS values and renames the concatenations(?) as "RMS"
+```python
+RMS = np.concatenate([df_control_zeroh["RMS"], df_drug_zeroh["RMS"], df_control_twelveh["RMS"], df_drug_twelveh["RMS"]])
+```
+To organize the data into plottable pyplot figures, the following step is necessary:
+```python
+PWSData = pd.DataFrame(columns = ['Rep','RMS'])
+rep = np.concatenate((np.repeat(1,len(df_control_zeroh['RMS'].values)),np.repeat(2,len(df_control_twelveh['RMS'].values)),np.repeat(3,len(df_drug_zeroh['RMS'].values)),np.repeat(4,len(df_drug_twelveh['RMS'].values))),axis=0)
+PWSData['RMS'] = RMS
+PWSData['Rep'] = rep
+PWSData_no_nan = PWSData.dropna()
+```
+The following code plots the previously organized data into a **violin plot** using pyplot. 
+```python
+ax = sns.violinplot(x='Rep',y='RMS',data=PWSData_no_nan)
+
+ax.set_title("Effect of DXM Treatment on RMS")
+plt.xlabel("Conditions")
+plt.ylabel("RMS")
+
+labels = [item.get_text() for item in ax.get_xticklabels()]
+labels[0] = 'Control 0h'
+labels[1] = 'DXM 0h'
+labels[2] = 'Control 12h'
+labels[3] = 'DXM 12h'
+
+ax.set_xticklabels(labels)
+
+plt.savefig("Effect of DXM Treatment on RMS Violin Best")
+```
+- To substitute the **violin plot** for a *different* type of plot, such as a **box plot** or **point plot**, substitute "sns.violinplot" with "sns.boxplot" or "sns.pointplot"
