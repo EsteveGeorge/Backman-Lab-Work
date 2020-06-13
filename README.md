@@ -1,7 +1,5 @@
 # Backman Lab Work
-
-Just added the code. Will update later.
-
+How does this PWS Data Analysis code work? It starts with the following, using Python:
 ```python
 from matplotlib import pyplot as plt
 import pandas as pd
