@@ -2,8 +2,8 @@
 
 Just added the code. Will update later.
 
-```ruby
-require 'redcarpet'
+```jupter
+from 'redcarpet'
 markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
 ```
