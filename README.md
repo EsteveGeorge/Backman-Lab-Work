@@ -2,7 +2,7 @@
 
 Just added the code. Will update later.
 
-```Jupyter
+```python
 from matplotlib import pyplot as plt
 import pandas as pd
 import seaborn as sns
