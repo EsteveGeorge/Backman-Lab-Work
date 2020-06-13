@@ -1,5 +1,5 @@
 # Backman Lab Work
-How does this PWS Data Analysis code work? It starts with the following, using Python:
+How does this PWS (Partial Wave Spectroscopy) data analysis code work? It starts with the following, using Python:
 ```python
 from matplotlib import pyplot as plt
 import pandas as pd
