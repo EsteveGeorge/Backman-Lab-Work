@@ -8,7 +8,7 @@ import numpy as np
 import statistics as stats
 import os
 ```
-Imports all necessary programs for function of code
+This first step imports all necessary programs for function of code
 
 To import necessary files for analysation of images:
 ```python
@@ -74,6 +74,7 @@ PWSData['RMS'] = RMS
 PWSData['Rep'] = rep
 PWSData_no_nan = PWSData.dropna()
 ```
+- Please note: The "RMS" step and the last step can be put into the same "run" box (I don't know what it's called)
 The following code plots the previously organized data into a **violin plot** using pyplot. 
 ```python
 ax = sns.violinplot(x='Rep',y='RMS',data=PWSData_no_nan)
