@@ -9,6 +9,7 @@ import seaborn as sns
 import numpy as np
 import statistics as stats
 import os
+import glob
 ```
 This first step imports all necessary programs for function of code
 
