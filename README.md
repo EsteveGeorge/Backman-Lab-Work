@@ -14,8 +14,8 @@ This first step imports all necessary programs for function of code
 
 To import necessary files for analysation of images:
 ```python
-filenames = [("/Users/estevegeorge/Documents/sites/NUWorkDocs/CelecoxibTreatmentExperiment/Control12hRep1.csv"), ("/Users/estevegeorge/Documents/sites/NUWorkDocs/CelecoxibTreatmentExperiment/Control12hRep2.csv"), ("/Users/estevegeorge/Documents/sites/NUWorkDocs/CelecoxibTreatmentExperiment/Control12hRep3.csv")]
-
+filenames = glob.glob("/Users/estevegeorge/Documents/sites/NUWorkDocs/CelecoxibTreatmentExperiment/Control12h*.csv")
+             
 for file in filenames:
     pwsDf = pd.read_csv(file)
 ```
